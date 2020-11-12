@@ -6,6 +6,7 @@ console.log("Imprime algo");
     {
         {
             console.log("Imprime outra coisa")
+            
         }
     }
 }
