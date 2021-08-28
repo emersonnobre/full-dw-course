@@ -1,0 +1,26 @@
+Topologias
+
+    Centralizadas e distribuídas;
+
+TCP/IP
+
+    Orientado a conexão e confiável;
+    IP - roteamento entre redes;
+    Camadas:
+        Aplicação - HTTP, FTP, processo-a-processo, portas
+        Transporte - TCP, comunicação máquina-a-máquina
+        Internet - comunicação entre redes, endereço ip, transferência de pacotes
+        Rede/Física - hardware
+
+IPV4
+
+    Classe A: 192.168.100.230 - uma seção para redes, o resto id do host. 255.0.0.0
+    Classe B: 192.168.100.230 - duas seções para redes, o resto id do host. 255.255.0.0
+    Classe C: 192.168.100.230 - três seção para redes, o resto id do host. 255.255.255.0
+
+Portas
+
+    portais de comunicação
+    serviços precisam de portas para se comunicarem com outras redes
+    
+

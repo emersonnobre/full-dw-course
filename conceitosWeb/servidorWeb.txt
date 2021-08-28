@@ -1,0 +1,9 @@
+- Controla as requisições
+- Precisa ter seu ip cadastrado em algum servidor DNS para que o cliente seja 
+redirecionado ao digitar a url
+- Virtual hosting: um servidor atendendo a varios sites
+- Possui pastas com conteúdos estáticos que compoem toda a estrutura do site
+
+Web Pack: pacotes com as coisas que você precisa para montar um servidor web
+ - SO, DB, Web Server, Linguagem.   EX: lamp
+ 

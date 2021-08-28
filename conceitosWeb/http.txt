@@ -1,0 +1,21 @@
+Hyper Text Transfer Protocol
+
+    Camada de Aplicação
+    Stateless - não possui estado
+    Cliente-servidor: requisição (url por exemplo) e resposta
+    TCP/IP
+    Geralmente retorna componentes de uma página web (html, css, js)
+    Fluxo básico:
+        1 - usuário insere a url
+        2 - browser gera a requisição
+        3 - servidor devolve a resposta
+        4 - browser interpreta e mostra o resultado (página web)
+    Métodos de requisição:
+        get - direto na url
+        post - corpo (mesmo assim, pra ser seguro tem que ser https)
+        put
+        delete
+        trace
+        options 
+        connect 
+        head

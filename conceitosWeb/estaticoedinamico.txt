@@ -1,0 +1,3 @@
+Estático: o servidor apenas lê os arquivos e oferece ao cliente.
+Dinâmico: o servidor gera os sites a partir de códigos. Interação com banco, acesso a
+dados externos etc. 
