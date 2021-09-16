@@ -1,0 +1,7 @@
+- dados criptografados
+- proteger contra interceptação
+- url, cookies, arquivos tudo criptografados
+
+AUTORIDADES CERTIFICADORAS
+- validam certificados
+- lets encrypt

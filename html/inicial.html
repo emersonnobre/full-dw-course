@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 class="tituloTopico">Olá, bem-vindo(a)</h1>
+        <nav>
+            <ul>
+                <a href="exercicios/teste1.html">Item1</a>
+                
+            </ul>
+        </nav>
+    </header>
+    <section id="content">
+        <!-- É possível criar atributos personalizados -->
+        
+    </section>
+    <footer>
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault()
+                const content = document.getElementById('content')
+                fetch(link.href).then(resp => resp.text()).then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>

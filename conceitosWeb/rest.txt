@@ -1,0 +1,12 @@
+WEB SERVICE
+para /clientes
+    get - return todos os clientes
+    post - inserir cliente novo
+    /clientes/36 - get - pega o cliente id 36
+    /cliente/12 - put - atualiza o cliente 12
+    /cliente/81 - delete - deleta cliente de id 81
+
+
+microserviços
+
+- repartir o serviço em diversos micro-serviços
