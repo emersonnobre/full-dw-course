@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div wb-attrib id="primeiro" >#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+         
+        const destacar = seletor => 
+            document.querySelectorAll(seletor).forEach(element => element.classList.add('destaque'))
+        const removerDestaque = seletor =>
+            document.querySelectorAll(seletor).forEach(element => element.classList.remove('destaque'))
+    </script>
+</body>
+</html>
