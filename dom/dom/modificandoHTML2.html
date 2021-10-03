@@ -12,7 +12,17 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        // o innerHTML tira tudo o que tinha antes e coloca o conteúdo passado.
+
+        const div = document.querySelector('div')
+        div.innerHTML = 'texto alterado hein...'
+        // div.outerHTML = 'texto alterado hein...' // além de substituir tudo o que tem dentro, substitui a tag pai também.
+    
+        div.insertAdjacentHTML('beforebegin', '<p>Antes de iniciar a tag!</p>')
+        div.insertAdjacentHTML('afterbegin', '<p>Depois de iniciar a tag!</p>')
+        div.insertAdjacentHTML('beforeend', '<p>Antes de fechar a tag!</p>')
+        div.insertAdjacentHTML('afterend', '<p>Depois de fechar a tag!</p>')
+        
     </script>
 </body>
 

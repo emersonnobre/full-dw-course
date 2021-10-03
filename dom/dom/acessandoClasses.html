@@ -11,8 +11,20 @@
     <div>
         Classes
     </div>
+
+    <h1 id="title">Alternando classe destaque!</h1>
+
     <script>
-        // ...
+        
+        const alternateDestaque = (selectors) => {
+            Array.from(selectors)
+            selectors.forEach(element => {
+                const classes = document.querySelector(element).classList
+                classes.toggle('destaque') 
+            });
+            
+        }
+        
     </script>
 </body>
 
