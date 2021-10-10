@@ -31,6 +31,19 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        const submitButton = document.querySelector('[wm-submit]')
+        submitButton.onclick = e => {
+            e.preventDefault()
+            const form = e.target.parentNode
+            const formData = new FormData(form)
+            if(formData.get('q').length === 0) {
+                alert('preencha o campo de pesquisa!')
+            }
+            else {
+                setTimeout(() => {
+                    window.location.href = e.target.parentNode.action
+                }, 1000)
+            }
+        }
     </script>
 </body>
