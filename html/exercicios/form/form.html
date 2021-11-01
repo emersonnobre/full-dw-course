@@ -1,0 +1,41 @@
+<h1>Formulário</h1>
+
+<form action="http://localhost:3003/usuarios" method="post" autocomplete="off">
+    <input type="text" name="nome" required>
+    <input type="password" name="senha" required>
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin" required> ADMIN
+        <input type="radio" name="tipo" value="regular"> REGULAR
+        <input type="radio" name="tipo" value="professor"> PROFESSOR
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> ATIVO
+    </div>
+
+    <select name="estado" required>
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceará</option>
+    </select>
+
+    <input type="submit" value="send">
+    <button formaction="http://localhost:3003/usuarios/3" formmethod="get">Update</button>
+</form>
+
+<style>
+
+    * {
+        outline: none;
+    }
+
+    input, textarea {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input[type=radio], input[type=checkbox] {
+        display: inline;
+    }
+
+</style>
