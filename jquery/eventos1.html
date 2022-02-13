@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+        body {
+            transition: background-color .5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #01</h1>
+    <div id="showMousePositionStatus"></div>
+    <div id='posicao'></div>
+    <div id='cliques'>Cliques: 0</div>
+    <input id="inputBackground" type="text" placeholder="Cor de Background">
+
+    <script>
+        let clicks = 0;
+        let showMousePositionStatus;
+        const originalBackground = $('body').css('background-color');
+
+        const appendHtml = (selector, html) => $(selector).html(html);
+
+        const showMousePosition = event => 
+            $('#posicao').html(`x: ${event.clientX} y: ${event.clientY}`);
+
+        const assignShowMousePosition = selector => {
+            $(selector).mousemove(showMousePosition);
+            showMousePositionStatus = 'The mouse position is being displayed';
+            appendHtml('#showMousePositionStatus', showMousePositionStatus);
+        }
+
+        const dismissShowMousePosition = (event, selector) => {
+            $(selector).off('mousemove', showMousePosition);
+            showMousePositionStatus = 'To display the mouse position, double click HERE';
+            appendHtml('#showMousePositionStatus', showMousePositionStatus);
+        }
+
+        const showMouseClick = () => {
+            clicks++;
+            appendHtml('#cliques', `Cliques: ${clicks}`);
+        }
+
+        const changeBackgroundColor = (selector, color) => {
+            console.log(selector, typeof(color));
+            $(selector).css('background-color', () => {
+                if (color.match(/#[\da-fA-F]{3,6}/))
+                    return color;
+                else 
+                    return originalBackground;
+            });
+        }
+
+        assignShowMousePosition('body');
+        $('body').on('click', showMouseClick);
+        $('#posicao').mouseover(event => dismissShowMousePosition(event, 'body'));
+        $('#showMousePositionStatus').dblclick(event => assignShowMousePosition('body'));
+        $('#inputBackground').keyup(function () {
+            const value = $(this).val();
+            changeBackgroundColor('body', value);
+        });
+    </script>
+</body>
