@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tayane Gomes Silveira",
+      "email": "tgomes@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Mariana Pereira Gonçalves",
+      "email": "mari_pepe12@gmail.com"
+    },
+    {
+      "name": "Maressa",
+      "email": "ewe",
+      "id": 3
+    },
+    {
+      "name": "Sophia Alencar",
+      "email": "sophieal@gmail.com",
+      "id": 4
+    }
+  ]
+}
