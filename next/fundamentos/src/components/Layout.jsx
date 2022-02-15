@@ -4,7 +4,7 @@ import Header from  './Header'
 
 export default function Layout(props) {
     return (
-        <div>
+        <div className={styles.layout}>
             <div className={styles.cabecalho}>
                 <Link href='/' >Back</Link>
             </div>

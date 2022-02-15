@@ -7,8 +7,6 @@ export default function Styled() {
             <div className={styles.purple}>
                 <h1>Styled Component</h1>
             </div>
-            <hr />
-            <p>This is a styled component build to train my abilities with the NextJS CSS resources!</p>
         </Layout>
     )
 }
