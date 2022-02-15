@@ -1,0 +1,11 @@
+.purple {
+    background-color: purple;
+    padding: 20px;
+    width: 70%;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.purple > h1 {
+    margin: 0;
+}
