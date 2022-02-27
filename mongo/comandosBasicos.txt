@@ -1,0 +1,50 @@
+COMANDOS BÁSICOS PARA O TERMINAL DO MONGODB
+
+- show dbs
+- use wm
+- show collections
+- db.createCollection('estados')
+- db.Estados.drop()
+
+INSERT 
+
+- db.estados.insert({nome: "Estado1", sigla: "TAL"}) Passa um objeto js para ser persistido na collection.
+- db.estados.find().pretty() Mostra os registros em uma estrutura mais organizada.
+
+CONSULTAS
+
+- db.estados.find({})
+- db.estados.find({sigla: "RJ"}) Com filtros
+- db.estados.find({ $or: [{sigla: "RJ"}, {sigla: "MS"}] }) Filtros com operadores
+- db.estados.find({ populacao: { $exists: true } }).pretty()
+- db.estados.find({}, {nome: 1, sigla: 1, _id: 0}) Determinando quais campos serão exibidos na consulta. 2º parâmetro
+
+PAGINAÇÂO
+
+- db.estados.find({}).skip(quantidadeParaPular).limit(QuantidadeMostrar)
+
+AGGREGATION
+
+- db.estados.aggregate([
+    { $project: { nome: 1, "cidades.nome": 1, _id: 0 }}
+])
+- db.estados.aggregate([
+    { $project: { populacao: { $sum: "$cidades.populacao" }, sigla: 1, _id: 0 } },
+    { $group: { _id:  null, populacaoTotal: { $sum: "$populacao" } } },
+    { $project: { _id: 0 } }
+])
+- db.estados.aggregate([
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $unwind: "$cidades" },
+    { $match: { "cidades.nome": "Sorocaba" } },
+    { $project: { codigoCidade: "$cidade._id", _id: 0 } }
+])
+
+UPDATE
+
+- db.estados.update({ sigla: "SP" }, { $push: { cidades: { nome: "Presidente Prudente" } } }) //adiciona um novo registro no array de cidades do estado
+- db.estados.update({ sigla: "MS" }, { $set: { cidades: [ { nome: "Três Lagoas" } ] } }) //substitui o array
+
+DELETE
+
+- db.estados.deleteOne({populacao: {$exists: true}, populacao: {$lt: 14000000}})
